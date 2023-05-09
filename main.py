@@ -57,6 +57,18 @@ for fileName in files:
         y = ny
 
     if(fileName==printRoad):
+        length = 0
+        for n in range(len(x) - 2):
+            length += sqrt((x[n + 1] - x[n])**2 + (y[n+1] - y[n])**2)
+
+        print(f'length for curved {fileName}: {346000*length/5280} miles')
+
+        length = 0
+        for n in range(len(nx) - 2):
+            length += sqrt((nx[n + 1] - nx[n])**2 + (ny[n+1] - ny[n])**2)
+
+        print(f'length for straight {fileName}: {346000*length/5280} miles')
+  
         fig, ax = plt.subplots()
         ax.plot(nx,ny, c="#ff00ff")
         ax.plot(x,y, c="#151515")
@@ -100,4 +112,4 @@ for fileName in files:
     
 print(print_dict(allRoads))'''
 for i in {k: v for k, v in sorted(allRoads.items(), key=lambda item: item[1])}:
-    print(i + ' ---> ' + str(allRoads[i]))
+    print(i + ' ---> ' + str(round(allRoads[i],2)) + " (ft), " + str(round(allRoads[i]*.3048,2)) + " (m)")
