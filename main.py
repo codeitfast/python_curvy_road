@@ -12,7 +12,7 @@ allRoads = {}
 print('roads: ')
 for i in files:
     print('   - ', i)
-printRoad = input('road for matplotlib (just name, not *.csv): ')
+printRoad = input('file to plot: ')
 
 def smooth(n, y):
     #n = distance to blur/smooth, y is an array of the original points
@@ -56,7 +56,7 @@ for fileName in files:
         x = nx
         y = ny
 
-    if(fileName==printRoad + ".csv"):
+    if(fileName==printRoad):
         fig, ax = plt.subplots()
         ax.plot(nx,ny, c="#ff00ff")
         ax.plot(x,y, c="#151515")
