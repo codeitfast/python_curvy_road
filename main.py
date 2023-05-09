@@ -32,7 +32,7 @@ def smooth(n, y):
 
 for fileName in files:
 
-    if(fileName == "main.py"):
+    if(fileName == "main.py" or fileName==".git"):
         continue
     #fileName = input('file name (q to exit): ')
     #if(fileName.lower() == 'q'):
